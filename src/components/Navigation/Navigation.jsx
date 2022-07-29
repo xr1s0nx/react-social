@@ -6,7 +6,7 @@ import dialogsIcon from "../../img/dialogs.png";
 import newsIcon from "../../img/news.png";
 import settingsIcon from "../../img/settings.png";
 import musicIcon from "../../img/music.png";
-import Friends from "./Friends/Friends";
+import FriendsContainer from "./Friends/FriendsContainer";
 
 const Navigation = (props) => {
 
@@ -33,7 +33,7 @@ const Navigation = (props) => {
             <img src={settingsIcon} alt="" />
             Settings
          </NavLink>
-         <Friends FriendsData={props.friends}/>
+         <FriendsContainer/>
       </nav>
    );
 };
