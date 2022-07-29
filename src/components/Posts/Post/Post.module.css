@@ -1,0 +1,144 @@
+.avatarWrap {
+   position: relative;
+   margin-right: 35px;
+}
+
+.postAvatarBlock {
+   width: 100px;
+   height: 100px;
+   overflow: hidden;
+   border-radius: 100%;
+}
+
+.postAvatarBlock img {
+   position: relative;
+   z-index: 100;
+   width: 100%;
+   height: 100%;
+}
+
+.nickWrap {
+   display: flex;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+.postTextBlock .text {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 30px;
+   margin-bottom: 25px;
+}
+
+.postTextBlock .dateText {
+   text-align: right;
+   font-weight: 500;
+   font-size: 15px;
+   color: rgba(255, 255, 255, 0.342);
+}
+
+.borderAvatar {
+   position: absolute;
+   content: "";
+   width: calc(100% + 6px);
+   height: calc(100% + 6px);
+   background: #fff;
+   border-radius: 100%;
+   z-index: 0;
+   left: -3px;
+   top: -3px;
+   background: rgb(255, 0, 0);
+   background: linear-gradient(103deg, rgba(255, 0, 0, 1) 0%, rgba(0, 8, 255, 1) 51%, rgba(0, 255, 31, 1) 100%);
+   overflow: hidden;
+   animation: 3s linear 0s normal none infinite running rot;
+   -webkit-animation: 3s linear 0s normal none infinite running rot;
+}
+
+@keyframes rot {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.nickWrap {
+   display: flex;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+.nickname {
+   font-weight: 900;
+   font-size: 35px;
+   color: #fff;
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+}
+
+.icons img {
+   margin-right: 15px;
+   width: 35px;
+   height: 35px;
+   cursor: pointer;
+}
+
+.post {
+   display: flex;
+   align-items: flex-start;
+   width: 100%;
+   border: 2px solid rgba(255, 255, 255, 0.375);
+   padding: 20px;
+   border-radius: 25px;
+   margin-bottom: 25px;
+}
+
+.bottom {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.likeBtn {
+   width: 30px;
+   height: 30px;
+   margin: 0;
+   padding: 0;
+}
+
+.likeBtn svg {
+   width: 30px;
+   height: 30px;
+}
+
+.likeBtn svg .fillHeart {
+   fill: transparent;
+}
+
+.likeBtn.active svg .fillHeart {
+   fill: red;
+}
+
+
+.likesWrap {
+   display: flex;
+   align-items: center;
+   width: 100%;
+}
+
+.likeCount {
+   font-weight: 700;
+   font-size: 20px;
+   margin-left: 10px;
+   color: rgb(188, 158, 228);
+}
+
+.postTextBlock {
+   width: 100%;
+}

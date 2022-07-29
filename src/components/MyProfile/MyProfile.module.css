@@ -1,0 +1,159 @@
+.profileBg {
+   display: block;
+   width: 100%;
+   transition: 0.5s;
+}
+
+.bannerBlock .hoverBg {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   transition: 0.5s;
+   opacity: 0;
+}
+
+.bannerBlock {
+   width: 100%;
+   height: 250px;
+   border-radius: 20px;
+   overflow: hidden;
+   position: relative;
+   margin-bottom: 35px;
+}
+
+.bannerBlock:hover .hoverBg {
+   opacity: 1;
+}
+
+.bannerBlock:hover .profileBg {
+   transform: scale(1.1);
+}
+
+.profile {
+   display: flex;
+   width: 100%;
+}
+
+.avatarFrame {
+   width: 200px;
+   height: 200px;
+   border-radius: 100%;
+   position: relative;
+   overflow: hidden;
+}
+
+.borderAvatar {
+   position: absolute;
+   content: "";
+   width: calc(100% + 10px);
+   height: calc(100% + 10px);
+   background: #fff;
+   border-radius: 100%;
+   z-index: 0;
+   left: -5px;
+   top: -5px;
+   background: rgb(255, 0, 0);
+   background: linear-gradient(103deg, rgba(255, 0, 0, 1) 0%, rgba(0, 8, 255, 1) 51%, rgba(0, 255, 31, 1) 100%);
+   overflow: hidden;
+   animation: 3s linear 0s normal none infinite running rot;
+   -webkit-animation: 3s linear 0s normal none infinite running rot;
+}
+
+.avatarBlock {
+   position: relative;
+   margin-right: 50px;
+}
+
+.avatarImg {
+   width: 100%;
+   height: 100%;
+   border-radius: 100%;
+   position: relative;
+   z-index: 100;
+}
+
+.setPhoto {
+   width: 100%;
+   height: 100%;
+   background-color: rgba(255, 255, 255, 0.35);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   top: 0;
+   left: 0;
+   border-radius: 100%;
+   opacity: 0;
+   transition: 0.5s;
+   visibility: hidden;
+   z-index: 100;
+   cursor: pointer;
+}
+
+.avatarBlock:hover .setPhoto {
+   opacity: 1;
+   visibility: visible;
+}
+
+.setPhoto .icon {
+   width: 100px;
+   height: 100px;
+}
+
+@keyframes rot {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.profile {
+   margin-bottom: 50px;
+}
+
+.profileDescr .nickWrap {
+   display: flex;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+.nickname {
+   font-weight: 900;
+   font-size: 35px;
+   background: linear-gradient(103deg, rgba(255, 54, 54, 1) 0%, rgba(243, 255, 0, 1) 100%);
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.icons {
+   display: flex;
+   align-items: center;
+   margin-left: 20px;
+}
+
+.icons img {
+   margin-right: 15px;
+   width: 35px;
+   height: 35px;
+   cursor: pointer;
+}
+
+.about {
+   font-weight: 600;
+   font-size: 20px;
+   height: 110px;
+   max-width: 500px;
+   width: 100%;
+   overflow: auto;
+   scrollbar-color: #000 #000;
+}
+
+.about::-webkit-scrollbar {
+   width: 0;
+}

@@ -1,0 +1,46 @@
+.Area {
+   width: 100%;
+   display: block;
+   resize: none;
+   height: 150px;
+   background-color: rgba(246, 246, 246, 0.29);
+   padding: 10px;
+   color: #fff;
+   font-weight: 500;
+   font-size: 25px;
+   border-radius: 20px;
+   border: 2px solid transparent;
+   transition: 0.5s;
+   margin-bottom: 20px;
+}
+
+.Area:focus {
+   outline: none;
+   border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.Area::placeholder {
+   color: rgba(255, 255, 255, 0.444);
+}
+
+.sendPost {
+   display: flex;
+   width: 100%;
+   max-width: 150px;
+   height: 40px;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   color: rgb(188, 158, 228);
+   font-size: 20px;
+   border-radius: 10px;
+   border: 2px solid rgba(255, 255, 255, 0.328);
+   transition: 0.5s;
+   margin-left: auto;
+   background-color: rgba(0, 0, 0, 0.254);
+   cursor: pointer;
+}
+
+.AddPostBlock {
+   margin-bottom: 50px;
+}

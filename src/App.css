@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   color: #fff;
+   background-color: rgb(44, 90, 117);
+}
+
+body::-webkit-scrollbar {
+   width: 0;
+   background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+   border-radius: 15px;
+   background-color: rgb(188, 158, 228);
+}
+
+body::-webkit-scrollbar-track {
+   border-radius: 10px;
+   background-color: transparent;
+}
+
+.container {
+   max-width: 1400px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+.grid-wrap {
+   display: grid;
+   grid-template-areas: "nav content";
+   grid-template-rows: 1fr;
+   grid-template-columns: 2fr 10fr;
+   grid-gap: 20px;
+}
+
+.content {
+   grid-area: content;
+   padding: 25px;
+   background-color: rgba(0, 0, 0, 0.3);
+   border-radius: 20px;
+   max-width: 1125px;
+}
