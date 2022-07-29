@@ -33,7 +33,7 @@ const Navigation = (props) => {
             <img src={settingsIcon} alt="" />
             Settings
          </NavLink>
-         <Friends FriendsData={props.Friends}/>
+         <Friends FriendsData={props.friends}/>
       </nav>
    );
 };

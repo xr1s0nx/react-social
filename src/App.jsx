@@ -16,7 +16,7 @@ function App(props) {
          <main>
             <div className="container">
                <div className="grid-wrap">
-                  <Navigation/>
+                  <Navigation friends={props.store.getState().FriendsPage.BestFriends}/>
                   <div className="content">
                      <Routes>
                         <Route path="/" element={<Navigate replace to="/Profile/My" />} />

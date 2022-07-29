@@ -1,5 +1,4 @@
 import React from "react";
-import avatar from "../../img/avatar.jpg";
 import setPhotoIcon from "../../img/setPhoto.png";
 import bannerImg from '../../img/banner-img.jpg'
 
@@ -16,7 +15,7 @@ const MyProfile = (props) => {
          <div className={classes.profile}>
             <div className={classes.avatarBlock}>
                <div className={classes.avatarFrame}>
-                  <img src={avatar} alt="" className={classes.avatarImg} />
+                  <img src={props.avatar} alt="" className={classes.avatarImg} />
                </div>
                <div className={classes.borderAvatar}></div>
                <div className={classes.setPhoto}>

@@ -18,7 +18,7 @@ let rerender = (state) => {
     <React.StrictMode>
       <BrowserRouter>
         <storeContext.Provider value={store}>
-          <App />
+          <App store={store}/>
         </storeContext.Provider>
       </BrowserRouter>
     </React.StrictMode>
