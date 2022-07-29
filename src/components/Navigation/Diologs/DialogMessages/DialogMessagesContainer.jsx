@@ -4,7 +4,7 @@ import DialogMessages from "./DialogMessages";
 import Message from "./Message/Message";
 import storeContext from "../../../../storeContext";
 
-const DialogMessagesContainer = (props) => {
+const DialogMessagesContainer = () => {
   
 
    return (
@@ -35,8 +35,9 @@ const DialogMessagesContainer = (props) => {
                   )),
             ];
             let messagesData = store.getState().DialogPage;
+
             return (
-               <DialogMessages MessageText={messagesData.NowMessage}></DialogMessages>
+               <DialogMessages Messages={Messages} keyDown={keyDown} onChange={onChange} sendMessage={sendMessage} MessageText={messagesData.NowMessage}></DialogMessages>
             )
          }
       }
