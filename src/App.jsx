@@ -16,16 +16,16 @@ function App(props) {
          <main>
             <div className="container">
                <div className="grid-wrap">
-                  <Navigation Friends={props.state.FriendsPage.BestFriends} />
+                  <Navigation/>
                   <div className="content">
                      <Routes>
                         <Route path="/" element={<Navigate replace to="/Profile/My" />} />
-                        <Route path="/Dialogs" element={<Diologs store={props.store} />} />
-                        <Route path="/Profile/My" element={<ProfileContent store={props.store} />} />
+                        <Route path="/Dialogs" element={<Diologs/>} />
+                        <Route path="/Profile/My" element={<ProfileContent />} />
                         <Route path="/News" element={<News />} />
                         <Route path="/Music" element={<Music />} />
                         <Route path="/Settings" element={<Settings />} />
-                        <Route path="/Friends" element={<FriendsPage Friends={props.state.FriendsPage.AllFriends} />} />
+                        <Route path="/Friends" element={<FriendsPage  />} />
                      </Routes>
                   </div>
                </div>

@@ -23,7 +23,7 @@ let initialState = {
         {
             id: 2,
             name: "Egor",
-            lastMsg: "Нет",
+            lastMsg: "Да",
             avatar: avatar2,
             classActive: false,
         },
