@@ -1,29 +1,27 @@
 import React from "react";
 import DialogProfile from "./DialogProfile/DialogProfile";
 import Dialogs from "./Diologs";
-import storeContext from "../../../storeContext";
+import { connect } from "react-redux";
 
-const DiologsContainer = () => {
-   return (
-      <storeContext.Consumer>
-         {(store) => {
-            let DialogProfiles = [
-               store
-                  .getState()
-                  .DialogPage.DialogData.map((dialog) => (
-                     <DialogProfile
-                        name={dialog.name}
-                        lastMsg={dialog.lastMsg}
-                        avatar={dialog.avatar}
-                        classActive={dialog.classActive}
-                        dialogLink={"/Dialogs/" + dialog.id}
-                     />
-                  )),
-            ];
-            return <Dialogs DialogProfiles={DialogProfiles}></Dialogs>;
-         }}
-      </storeContext.Consumer>
-   );
+let mapStateToProps = (state) => {
+   let DialogProfiles = [
+      state.DialogPage.DialogData.map((dialog) => (
+         <DialogProfile
+            key={dialog.id}
+            name={dialog.name}
+            lastMsg={dialog.lastMsg}
+            avatar={dialog.avatar}
+            classActive={dialog.classActive}
+            dialogLink={"/Dialogs/" + dialog.id}
+         />
+      )),
+   ];
+
+   return {
+      DialogProfiles: DialogProfiles,
+   };
 };
 
-export default DiologsContainer;
+const DialogsContainer = connect(mapStateToProps, null)(Dialogs);
+
+export default DialogsContainer;

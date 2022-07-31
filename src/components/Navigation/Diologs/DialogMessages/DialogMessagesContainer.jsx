@@ -2,47 +2,50 @@ import React from "react";
 import { sendMessageActionCreator, updateMessageTextActionCreator } from "../../../../redux/dialogReducer";
 import DialogMessages from "./DialogMessages";
 import Message from "./Message/Message";
-import storeContext from "../../../../storeContext";
+import { connect } from "react-redux";
 
-const DialogMessagesContainer = () => {
-  
 
-   return (
-   <storeContext.Consumer>
-      {
-         (store) => {
-            const sendMessage = () => {
-               store.dispatch(sendMessageActionCreator());
-            };
-         
-            let onChange = (e) => {
-               let text = e.target.value;
-               store.dispatch(updateMessageTextActionCreator(text));
-            };
-         
-            let keyDown = (e) => {
-               if (e.code === "Enter") {
-                  sendMessage();
-                  e.preventDefault();
-               }
-            };
-         
-            let Messages = [
-               store
-                  .getState()
-                  .DialogPage.MessagesData.map((messageData) => (
-                     <Message name={messageData.name} avatar={messageData.avatar} textMsg={messageData.textMsg} my={messageData.my} />
-                  )),
-            ];
-            let messagesData = store.getState().DialogPage;
+let mapDispatchToProps = (dispatch) => {
 
-            return (
-               <DialogMessages Messages={Messages} keyDown={keyDown} onChange={onChange} sendMessage={sendMessage} MessageText={messagesData.NowMessage}></DialogMessages>
-            )
-         }
+   const sendMessage = () => {
+      dispatch(sendMessageActionCreator());
+   };
+
+   const onChange = (e) => {
+      let text = e.target.value;
+      dispatch(updateMessageTextActionCreator(text));
+   };
+
+   const keyDown = (e) => {
+      if (e.code === "Enter") {
+         sendMessage();
+         e.preventDefault();
       }
-   </storeContext.Consumer>
-   )
+   };
+
+   return {
+      keyDown: keyDown,
+      onChange: onChange,
+      sendMessage: sendMessage,
+   };
 };
 
+let mapStateToProps = (state) => {
+
+   let Messages = [
+      state.DialogPage.MessagesData.map((messageData) => (
+         <Message key={messageData.msgNum} name={messageData.name} avatar={messageData.avatar} textMsg={messageData.textMsg} my={messageData.my} />
+      )),
+   ];
+
+   let NowMessage = state.DialogPage.NowMessage;
+
+   return {
+      Messages: Messages,
+      MessageText: NowMessage,
+   };
+};
+
+
+const DialogMessagesContainer = connect(mapStateToProps, mapDispatchToProps)(DialogMessages);
 export default DialogMessagesContainer;

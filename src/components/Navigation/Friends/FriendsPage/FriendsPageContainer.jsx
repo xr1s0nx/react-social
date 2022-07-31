@@ -1,28 +1,26 @@
 import React from "react";
 import Friend from "./Friend/Friend";
-import storeContext from "../../../../storeContext";
 import FriendsPage from "./FriendsPage";
+import { connect } from "react-redux";
 
-const FriendsPageContainer = (props) => {
-   
-    return (
-        <storeContext.Consumer>
-            {
-                (store) => {
-                    let FriendsList = [
-                        store.getState().FriendsPage.AllFriends.map((friend) => {
-                            return (
-                                <Friend name={friend.name} id={friend.id} avatar={friend.avatar}/>
-                            )
-                        })
-                    ]
-                    return (
-                        <FriendsPage FriendsList={FriendsList}></FriendsPage>
-                    )
-                }
-            }
-        </storeContext.Consumer>
-    )
+
+
+
+
+let mapSateToProps = (state) => {
+    let FriendsList = [
+        state.FriendsPage.AllFriends.map((friend) => {
+            return (
+                <Friend key={friend.id} name={friend.name} id={friend.id} avatar={friend.avatar}/>
+            )
+        })
+    ]
+
+    return {
+        FriendsList: FriendsList
+    }
 }
+
+const FriendsPageContainer = connect(mapSateToProps, null)(FriendsPage)
 
 export default FriendsPageContainer;

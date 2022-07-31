@@ -1,24 +1,15 @@
-import React from "react";
 import MyProfile from './MyProfile'
-import storeContext from "../../storeContext";
+import { connect } from "react-redux/es/exports";
 
+let mapStateToProps = (state) => {
+   let propsData = state.ProfilePage.myProfile[0];
+   return {
+      name: propsData.name,
+      about: propsData.aboutText,
+      avatar: propsData.avatar
+   }
+}
 
-
-const MyProfileContainer = (props) => {
-   return (
-      <storeContext.Consumer>
-         {
-            (store) => {
-               debugger
-               let propsData = store.getState().ProfilePage.myProfile[0];
-               return (
-                  <MyProfile name={propsData.name} about={propsData.aboutText} avatar={propsData.avatar}></MyProfile>
-               )
-            }
-           
-         }
-      </storeContext.Consumer>
-   );
-};
+const MyProfileContainer = connect(mapStateToProps, null)(MyProfile)
 
 export default MyProfileContainer;

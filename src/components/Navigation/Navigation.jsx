@@ -8,7 +8,7 @@ import settingsIcon from "../../img/settings.png";
 import musicIcon from "../../img/music.png";
 import FriendsContainer from "./Friends/FriendsContainer";
 
-const Navigation = (props) => {
+const Navigation = () => {
 
 
    return (

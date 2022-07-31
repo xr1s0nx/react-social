@@ -9,7 +9,8 @@ import Settings from "./components/Navigation/Settings/Settings";
 import React from "react";
 import DiologsContainer from "./components/Navigation/Diologs/DialogsContainer";
 import FriendsPageContainer from "./components/Navigation/Friends/FriendsPage/FriendsPageContainer";
-function App(props) {
+import UsersContainer from "./components/Navigation/Users/UsersContainer";
+function App() {
    return (
       <div className="App">
          <Header />
@@ -26,6 +27,7 @@ function App(props) {
                         <Route path="/Music" element={<Music />} />
                         <Route path="/Settings" element={<Settings />} />
                         <Route path="/Friends" element={<FriendsPageContainer  />} />
+                        <Route path="/Users" element={<UsersContainer  />} />
                      </Routes>
                   </div>
                </div>

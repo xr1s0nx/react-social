@@ -8,7 +8,7 @@ const Posts = (props) => {
 
    return (
       <div className="posts">
-         <AddPostContainer store={props.store}/>
+         <AddPostContainer/>
          <div className={classes.myPosts}>{props.posts}</div>
       </div>
    );

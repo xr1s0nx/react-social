@@ -16,6 +16,7 @@ let initialState = {
 
 export const profileReducer = (state = initialState, action) => {
 
+
     switch (action.type) {
 
         case ADD_POST:
@@ -31,16 +32,23 @@ export const profileReducer = (state = initialState, action) => {
                     avatar: avatar,
                     date: outputDate
                 };
-
-                state.PostsData.push(newPost);
-                state.PostNewText = '';
-
+                return {
+                    ...state,
+                    PostsData: [...state.PostsData, newPost],
+                    PostNewText: ''
+                }
             }
-            return state
+
+            else {
+                return state
+            }
 
         case CHANGE_POST_TEXT:
-            state.PostNewText = action.PostMessage;
-            return state
+
+            return {
+                ...state,
+                PostNewText: action.PostMessage
+            }
 
         default:
             return state

@@ -46,26 +46,14 @@
    overflow: hidden;
 }
 
-.borderAvatar {
-   position: absolute;
-   content: "";
-   width: calc(100% + 10px);
-   height: calc(100% + 10px);
-   background: #fff;
-   border-radius: 100%;
-   z-index: 0;
-   left: -5px;
-   top: -5px;
-   background: rgb(255, 0, 0);
-   background: linear-gradient(103deg, rgba(255, 0, 0, 1) 0%, rgba(0, 8, 255, 1) 51%, rgba(0, 255, 31, 1) 100%);
-   overflow: hidden;
-   animation: 3s linear 0s normal none infinite running rot;
-   -webkit-animation: 3s linear 0s normal none infinite running rot;
-}
+
 
 .avatarBlock {
    position: relative;
    margin-right: 50px;
+   border-radius: 100%;
+   border: 2px solid transparent;
+   transition: .5s;
 }
 
 .avatarImg {
@@ -94,6 +82,10 @@
    cursor: pointer;
 }
 
+.avatarBlock:hover {
+   border: 2px solid #fff;
+}
+
 .avatarBlock:hover .setPhoto {
    opacity: 1;
    visibility: visible;
@@ -104,14 +96,6 @@
    height: 100px;
 }
 
-@keyframes rot {
-   0% {
-      transform: rotate(0deg);
-   }
-   100% {
-      transform: rotate(360deg);
-   }
-}
 
 .profile {
    margin-bottom: 50px;

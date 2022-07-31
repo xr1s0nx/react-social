@@ -50,34 +50,41 @@ let initialState = {
         },
     ],
     MessagesData: [
-        { name: "xr1s0nx", avatar: avatar, textMsg: "Как дела?", my: true },
-        { name: "Artem", avatar: avatarFriend, textMsg: "Все хорошо", my: false },
+        { msgNum: 1, name: "xr1s0nx", avatar: avatar, textMsg: "Как дела?", my: true },
+        { msgNum: 2, name: "Artem", avatar: avatarFriend, textMsg: "Все хорошо", my: false },
     ],
     NowMessage: '',
 };
 
 export const dialogReducer = (state = initialState, action) => {
 
+    let stateCopy = {...state};
+
     switch (action.type) {
         case CHANGE_MESSAGE_TEXT:
-            state.NowMessage = action.messageText;
-            return state
+            stateCopy.NowMessage = action.messageText;
+            return {
+                ...state,
+                NowMessage: action.messageText
+            }
 
         case SEND_MESSAGE:
             if (state.NowMessage !== '') {
+                let newMsgNum = stateCopy.MessagesData.length + 1;
                 let newMessage = {
+                    msgNum: newMsgNum,
                     name: 'xr1s0nx',
                     avatar: avatar,
                     textMsg: state.NowMessage,
                     my: true
                 }
-                state.MessagesData.push(newMessage);
-                if (newMessage.my) {
-                    state.DialogData[0].lastMsg = 'Вы: ' + state.NowMessage;
-                }
-                state.NowMessage = '';
+                return {
+                    ...state,
+                    MessagesData: [...state.MessagesData, newMessage],
+                    NowMessage: '',
+                };
             }
-            return state
+            return stateCopy
 
         default: return state
     }
