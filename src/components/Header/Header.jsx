@@ -16,12 +16,12 @@ const Header = () => {
                <NavLink to={"/Users"} className={classes.searchIcon}>
                   <img src={sIcon} alt="" />
                </NavLink>
-               <a href="/#" className={classes.profileBtn}>
+               <NavLink to={'/Profile/My'} className={classes.profileBtn}>
                   <div className={classes.profileImgWrap}>
                      <img src={profileImg} alt="" className={classes.profileImg} />
                   </div>
                   <img src={arrow} alt="" className={classes.arrow} />
-               </a>
+               </NavLink>
             </div>
          </div>
       </header>

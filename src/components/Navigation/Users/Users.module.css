@@ -92,6 +92,7 @@ a {
    background-color: rgba(2, 2, 2, 0.173);
    border: 2px solid rgba(188, 158, 228, 0.606);
    overflow: hidden;
+   margin-top: 20px;
 }
 
 .inpBlock img {
@@ -104,4 +105,41 @@ a {
 .inpBlock:focus {
    border: 2px solid rgb(188, 158, 228);
    outline: none;
+} 
+
+.pagination {
+   display: flex;
+   align-items: center;
+   width: auto;
+   justify-content: center;
+   margin: 0 auto;
+   margin-top: 50px;
+}
+
+.pageBtn {
+   display: flex;
+   width: 30px;
+   height: 30px;
+   align-items: center;
+   justify-content: center;
+   background-color: rgba(0, 0, 0, 0.348);
+   transition: .3s;
+   border: 1px solid rgba(188, 158, 228, 0.606);
+   border-radius: 4px;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 15px;
+   color: rgba(255, 255, 255, 0.498);
+   margin: 0 5px;
+}
+
+.pageBtn.selected {
+   color: #fff;
+   border: 1px solid rgba(188, 158, 228, 1);
+}
+
+.UsersPage {
+   font-weight: 600;
+   font-size: 30px;
+   margin-bottom: 20px;
 }
