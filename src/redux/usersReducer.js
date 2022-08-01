@@ -12,12 +12,12 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        { id: 1, followed: true, name: 'Artem', avatar: avatar1, about: 'About Artem' },
-        { id: 2, followed: false, name: 'Egor', avatar: avatar2, about: 'About Egor' },
-        { id: 3, followed: true, name: 'Dima', avatar: avatar3, about: 'About Dima' },
-        { id: 4, followed: true, name: 'Roman', avatar: avatar4, about: 'About Roman' },
-        { id: 5, followed: true, name: 'Maria', avatar: avatar5, about: 'About Maria' },
-        { id: 6, followed: true, name: 'Sergey', avatar: avatar6, about: 'About Sergey' },
+        // { id: 1, followed: true, name: 'Artem', avatar: avatar1, about: 'About Artem' },
+        // { id: 2, followed: false, name: 'Egor', avatar: avatar2, about: 'About Egor' },
+        // { id: 3, followed: true, name: 'Dima', avatar: avatar3, about: 'About Dima' },
+        // { id: 4, followed: true, name: 'Roman', avatar: avatar4, about: 'About Roman' },
+        // { id: 5, followed: true, name: 'Maria', avatar: avatar5, about: 'About Maria' },
+        // { id: 6, followed: true, name: 'Sergey', avatar: avatar6, about: 'About Sergey' },
     ],
 };
 
